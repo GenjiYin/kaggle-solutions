@@ -258,9 +258,13 @@ Predict 1-Year US Stock Returns from Fundamentals/
     └── sample_submission.csv  ← 提交格式样例（已入库）
 ```
 
-> **注意：`train.csv` 与 `test.csv` 不在本仓库里** —— 请到
-> [比赛页面](https://www.kaggle.com/competitions/predict-1-year-us-stock-returns-from-fundamentals)
-> 的 **Data** 标签页下载，或按 `data/README.md` 里的命令下载。
+> **注意：`train.csv` 与 `test.csv` 不在本仓库里**，需自己从 Kaggle 下载。
+>
+> 下载地址（网页方式，不需要任何配置）：
+> **https://www.kaggle.com/competitions/predict-1-year-us-stock-returns-from-fundamentals/data**
+>
+> 打开后 → 登录 Kaggle →（若页面提示就先点 `Join Competition`）→ 右上角 **Download All** → 解压到本目录下的 `data/`。
+> 详细步骤见 `data/README.md`。
 
 > `方案贴解读/` 记录的是**这场比赛榜单的真实性质** ——
 > 前三名方案的核心不是建模，而是"去匿名化 + 识别异常标签"。

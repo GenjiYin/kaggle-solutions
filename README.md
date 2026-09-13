@@ -17,28 +17,23 @@
 
 ---
 
-## 重要：本仓库不含比赛数据，需自行下载
+## 重要：本仓库不含比赛数据，需自行去 Kaggle 下载
 
 **为了让仓库保持轻量、并遵守 Kaggle 的数据分发条款，比赛原始数据（`train.csv` / `test.csv`）没有纳入本仓库。**
 
 各项目 `data/` 目录下只有一份说明文件和提交格式样例，运行脚本前请先自行下载数据。
 
-**下载方式（两步）：**
+**下载方式（不需要任何配置，也不需要命令行）：**
 
-1. 点击上表**「对应比赛」列**的链接，进入该比赛的 Kaggle 页面；
-2. 在页面的 **Data** 标签页下载数据，或按下面命令下载（需先配置 Kaggle API 凭据）：
+1. 打开该比赛的**数据页**（点上表「对应比赛」列的链接进入 Kaggle 比赛页，再切到 **Data** 标签页）；
+2. 登录 Kaggle（没有账号就免费注册一个），若页面提示需先接受比赛规则，点一下 **Join Competition**；
+3. 点右上角 **Download All** 下载压缩包，**解压后把 csv 文件放进该项目的 `data/` 目录**。
 
-```bash
-kaggle competitions download -c <比赛代号> -p data
-```
+以现有项目为例，直接打开这个网址即可：
 
-以现有项目为例：
+👉 **https://www.kaggle.com/competitions/predict-1-year-us-stock-returns-from-fundamentals/data**
 
-```bash
-kaggle competitions download -c predict-1-year-us-stock-returns-from-fundamentals -p data
-```
-
-每个项目的 `data/README.md` 里都写了该比赛对应的下载命令与文件清单，照着做即可。
+每个项目的 `data/README.md` 里都写了该比赛数据页的**直接链接**与分步说明，照着做即可。
 
 > 数据放好之后，直接运行该项目的分析脚本（如 `因子分析.py`），它会自动读取 `data/` 并生成报告。
 

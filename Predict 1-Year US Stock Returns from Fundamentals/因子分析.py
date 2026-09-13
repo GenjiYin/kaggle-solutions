@@ -86,9 +86,10 @@ def build_db(csv_dir: Path, verbose=True):
     csv_path = Path(csv_dir) / TRAIN_FILE
     if not csv_path.exists():
         sys.exit(f"[错误] 找不到数据文件：{csv_path}\n"
-                 f"       本仓库不含比赛原始数据，请先下载（需配置 Kaggle API 凭据）：\n"
-                 f"         kaggle competitions download -c {COMPETITION} -p \"{csv_dir}\"\n"
-                 f"       或把 train.csv 放到 {csv_dir}，或修改脚本顶部的 CSV_DIR")
+                 f"       本仓库不含比赛原始数据，请先用浏览器下载：\n"
+                 f"         https://www.kaggle.com/competitions/{COMPETITION}/data\n"
+                 f"         打开 → 登录 → Download All → 解压到 {csv_dir}\n"
+                 f"       或把 train.csv 放到该目录，或修改脚本顶部的 CSV_DIR")
 
     con = duckdb.connect(":memory:")
     con.execute(
