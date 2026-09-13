@@ -17,12 +17,37 @@
 
 ---
 
+## 重要：本仓库不含比赛数据，需自行下载
+
+**为了让仓库保持轻量、并遵守 Kaggle 的数据分发条款，比赛原始数据（`train.csv` / `test.csv`）没有纳入本仓库。**
+
+各项目 `data/` 目录下只有一份说明文件和提交格式样例，运行脚本前请先自行下载数据。
+
+**下载方式（两步）：**
+
+1. 点击上表**「对应比赛」列**的链接，进入该比赛的 Kaggle 页面；
+2. 在页面的 **Data** 标签页下载数据，或按下面命令下载（需先配置 Kaggle API 凭据）：
+
+```bash
+kaggle competitions download -c <比赛代号> -p data
+```
+
+以现有项目为例：
+
+```bash
+kaggle competitions download -c predict-1-year-us-stock-returns-from-fundamentals -p data
+```
+
+每个项目的 `data/README.md` 里都写了该比赛对应的下载命令与文件清单，照着做即可。
+
+> 数据放好之后，直接运行该项目的分析脚本（如 `因子分析.py`），它会自动读取 `data/` 并生成报告。
+
+---
+
 ## 目录结构
 
 ```
 kaggle/
-├── README.md                                              # 本文件
-├── 量化比赛清单.md                                          # 金融/量化类比赛汇总（含已结束的经典赛）
 └── Predict 1-Year US Stock Returns from Fundamentals/      # 单个比赛项目
     ├── README.md                                          # 该比赛的完整说明（含结论、方法与口径）
     ├── 因子分析.py                                          # 分析脚本（改配置区即可复用）
@@ -30,22 +55,7 @@ kaggle/
     ├── 数据字典.md                                          # 39 个字段的含义、类型、缺失率
     ├── 方案贴解读/                                          # 优秀方案的中文解读（附英文原文）
     ├── fig/                                               # 报告插图
-    └── data/                                              # 原始数据（不入库，见下）
-```
-
----
-
-## 关于数据
-
-**比赛原始数据不入库。** 原因有两点：
-
-1. 数据体积较大（单个比赛约 7 MB），且属于派生资源；
-2. Kaggle 比赛数据受该比赛的 Competition Rules 约束，通常不允许在平台外重新分发。
-
-各项目目录下的 `README.md` 里有对应的数据获取命令。以现有项目为例：
-
-```bash
-kaggle competitions download -c predict-1-year-us-stock-returns-from-fundamentals -p data
+    └── data/                                              # 数据目录（原始数据需自行下载，见上）
 ```
 
 ---
@@ -65,13 +75,3 @@ duckdb
 cd "Predict 1-Year US Stock Returns from Fundamentals"
 python 因子分析.py          # 重新生成 因子分析报告.html
 ```
-
----
-
-## 目录里的比赛
-
-| 比赛 | 类型 | 状态 |
-|---|---|---|
-| Predict 1-Year US Stock Returns from Fundamentals | 基本面因子 → 收益预测 | 分析完成 |
-
-更多金融/量化方向的比赛（含已结束但数据仍可下载的经典赛）见 [`量化比赛清单.md`](./量化比赛清单.md)。
