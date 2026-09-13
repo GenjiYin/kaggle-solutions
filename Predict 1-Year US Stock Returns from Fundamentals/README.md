@@ -251,11 +251,16 @@ Predict 1-Year US Stock Returns from Fundamentals/
 ├── 方案贴解读/                 ← 比赛第 3 名 / 第 6 名方案的中英对照解读
 │   ├── 第3名-指纹匹配与收益重构/
 │   └── 第6名-SEC指纹与收益重构/
-└── data/
-    ├── train.csv              ← 训练集（研究用）
-    ├── test.csv               ← 测试集（无标签，仅作参考）
-    └── sample_submission.csv
+└── data/                      ← 数据目录（train/test 不入库，需自行下载）
+    ├── README.md              ← 下载命令与文件说明
+    ├── train.csv              ← 训练集（需下载）
+    ├── test.csv               ← 测试集（需下载，无标签）
+    └── sample_submission.csv  ← 提交格式样例（已入库）
 ```
+
+> **注意：`train.csv` 与 `test.csv` 不在本仓库里** —— 请到
+> [比赛页面](https://www.kaggle.com/competitions/predict-1-year-us-stock-returns-from-fundamentals)
+> 的 **Data** 标签页下载，或按 `data/README.md` 里的命令下载。
 
 > `方案贴解读/` 记录的是**这场比赛榜单的真实性质** ——
 > 前三名方案的核心不是建模，而是"去匿名化 + 识别异常标签"。
@@ -309,6 +314,7 @@ python 因子分析.py
 ```
 
 脚本会自动定位同目录下的 `data/train.csv`。
+（**克隆本仓库后需先按上一节说明下载数据**，否则脚本会提示找不到文件。）
 
 ---
 
