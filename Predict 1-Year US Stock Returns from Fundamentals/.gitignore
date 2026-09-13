@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# DuckDB 缓存（已不再使用，留着以防误入库）
+data/kaggle.duckdb
+data/kaggle.duckdb.wal
+data/*.kaggle-partial
+
+# 比赛原始数据不入库（Kaggle 条款限制，获取方式见 data/README.md）
+# 例外：保留数据说明与提交格式样例
+data/*.csv
+!data/sample_submission.csv
+!data/README.md
+
+# 提交文件
+submission*.csv
